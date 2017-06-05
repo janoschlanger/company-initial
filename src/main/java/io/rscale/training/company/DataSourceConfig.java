@@ -1,3 +1,4 @@
+
 package io.rscale.training.company;
 
 import javax.annotation.PostConstruct;
@@ -9,25 +10,27 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
+import org.springframework.context.annotation.Profile;
 
 @Configuration
+@Profile("!cloud")
 public class DataSourceConfig {
 
     private static final Logger logger = Logger.getLogger(DataSourceConfig.class);
 
-    @Value("${mysql.dbName}")
+    @Value("${mysql.dbName:ad_81ebd59bad9a460}")
     private String mysqlDbName;
     
-    @Value("${mysql.user}")
+    @Value("${mysql.user:b0ed7493131b9e}")
     private String mysqlUser;
     
-    @Value("${mysql.password}")
+    @Value("${mysql.password:c4f866e5}")
     private String mysqlPassword;
     
-    @Value("${mysql.server}")
+    @Value("${mysql.server:us-cdbr-iron-east-03.cleardb.net}")
     private String mysqlServer;
     
-    @Value("${mysql.port}")
+    @Value("${mysql.port:3306}")
     private int mysqlPort;
     
     private DataSource dataSource;
