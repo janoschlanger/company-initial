@@ -1,0 +1,11 @@
+---
+spring:
+  application:
+    name: company
+  cloud:
+    config:
+      uri: https://${vcap.services.central-config.credentials.username}:${vcap.services.central-config.credentials.password}@${vcap.services.central-config.credentials.uri}
+
+  management:
+    security:
+      enabled: false
