@@ -7,3 +7,5 @@ applications:
     name: company-initial
     path: "C:\\Source\\company-initial\\build\\libs\\company.jar"
     random-route: true
+    services: 
+      - company-db
