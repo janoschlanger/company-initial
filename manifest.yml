@@ -9,3 +9,4 @@ applications:
     random-route: true
     services: 
       - company-db
+      - central-config
